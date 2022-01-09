@@ -1,1 +1,1 @@
-worker: within3.py:app ${PORT}
+worker: within3.py:app 
