@@ -5,6 +5,11 @@
  
 #sudo docker run -it --rm -p 5000:5000 --name weather weather:v1
 
+#running docker on heroku
+heroku plugins:install heroku-docker
+heroku docker:start
+heroku docker:release
+
 #declare image and container variables
 imageName=weather:v1
 containerName=weather
