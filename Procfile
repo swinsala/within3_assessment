@@ -1,2 +1,2 @@
-web: bash docker_bash.sh
-worker: bash docker_bash.sh
+web: /bin/bash docker_bash.sh
+worker: /bin/bash docker_bash.sh
