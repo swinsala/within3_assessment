@@ -1,1 +1,1 @@
-web: gunicorn :docker_bash.sh --port=$PORT
+web: python within3.py ${PORT}
