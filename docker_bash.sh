@@ -23,10 +23,10 @@ if [ "$containerRunning" == "true" ]; then
     echo Removing old container...
     docker rm -f $containerName
     echo Spinning up new container...                       
-    docker run -d -p 5000:5000 --name $containerName $imageName
+    docker run -d -p 5000:5000 --env-file .env --name $containerName $imageName
 else
     echo Spinning up new container...                       
-    docker run -d -p 5000:5000 --name $containerName $imageName
+    docker run -d -p 5000:5000 --env-file .env --name $containerName $imageName
 fi
 
 

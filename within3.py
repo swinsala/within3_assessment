@@ -15,7 +15,8 @@ def weather(zip_code):
 #base URL of the weather website
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
 #API key retrieved from the weather website
-    API_KEY = "6f8628fda32712e5b77d10cd5672d8e4"
+    #API_KEY = "6f8628fda32712e5b77d10cd5672d8e4"
+    API_KEY = os.environ["API_KEY"]
 #complete URL to be used
     URL = base_url + "zip=" + zip_code + "&APPID=" + API_KEY
 #http request
