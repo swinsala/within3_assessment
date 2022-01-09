@@ -14,7 +14,7 @@ This is deployed either in the cloud using Heroku or locally using Docker deskto
 - Docker
 - Heroku CLI
 
-# Account registration
+# ACCOUNT REGISTRATION
 
 To be able to use the codes, you need to create accounts on the following
 
