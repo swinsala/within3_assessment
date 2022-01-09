@@ -7,6 +7,10 @@ import requests, json, os
 #create an instance of flask app 
 app = Flask(__name__)
 
+#using the zip code from the vars in Heroku
+#zip_code = str(os.environ["ZIP_CODE"])
+#@app.route('/<string:{zip_code}>', methods=['GET'])
+
 #creating a route to get the zip code of the city to check the weather
 @app.route('/<string:zip_code>', methods=['GET'])
 
