@@ -13,4 +13,4 @@ COPY . .
 ENV LISTEN_PORT=5000
 EXPOSE 5000
 
-CMD [ "python3", "within3.py", "0.0.0.0:5000" ]
+CMD [ "python3", "within3.py" ]
