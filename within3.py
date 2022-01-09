@@ -8,25 +8,23 @@ import requests, json, os
 app = Flask(__name__)
 
 #using the zip code from the vars in Heroku
-#zip_code = str(os.environ["ZIP_CODE"])
-#@app.route('/<string:{zip_code}>', methods=['GET'])
+zip_code = str(os.environ.get("ZIP_CODE"))
 
-#zip_code = 32901
 #creating a route to get the zip code of the city to check the weather
-#@app.route('/<string:zip_code>', methods=['GET'])
-@app.route('/string:32901', methods=['GET'])
+@app.route('/', methods=['GET'])
+#@app.route('/string:zip_code', methods=['GET'])
 
-def weather(zip_code):
+def weather():
 
 #base URL of the weather website
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
 #API key retrieved from the weather website
     #API_KEY = "6f8628fda32712e5b77d10cd5672d8e4"
-    API_KEY = os.environ["API_KEY"]
+    API_KEY = os.environ.get("API_KEY")
 #complete URL to be used
-    URL = base_url + "zip=" + zip_code + "&APPID=" + API_KEY
+    URL = base_url + "zip=" + zip_code + "&APPID=" + str(API_KEY)
 #http request
-    r = requests.get(URL)
+    r = requests.get(f"{URL}")
 #getting the responce in json format
     data = r.json()
 #decoupling the json data to retrieve needed variables  
@@ -53,5 +51,6 @@ def weather(zip_code):
     
         
 #provide port and other parameters
-if __name__ == "__main__":   
-    app.run(host="0.0.0.0", debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))   
+    app.run(host="0.0.0.0", debug=True, port=port)
