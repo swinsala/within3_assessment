@@ -1,1 +1,1 @@
-web: within3:app
+web: gunicorn within3:app
