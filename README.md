@@ -30,7 +30,7 @@ To be able to use the codes, you need to create accounts on the following
 - Run `./docker_bash.sh`
 - The script will build a Docker image, check if a Docker container is running and spin up a new container if none is runnig under that name
 - The Dockerfile has an entry point to run `within3.py` python script
-- Go to http://localhost:5000 to view the API result on your browser
+- Go to http://localhost:5000?zip_code=07018 to view the API result on your browser. Other zip codes can used to query the app too
 - To stop the container running and delete the image, run the following commands:
 - - `docker container stop weather`
 - - `docker container rm weather`
@@ -54,7 +54,6 @@ This can be done using two entry points. `heroku.yml` is the one Heroku picks up
 ```
 heroku stack:set container --app swinsala-weather-api
 heroku config:set API_KEY={your API key} --app swinsala-weather-api
-heroku config:set ZIP_CODE={some zip code} --app swinsala-weather-api
 git push heroku main
 ```
-The first line above allows Heroku set its enverionment to be able to run Docker if it is going through `heroku.yml`. If not, ignore it so it can use `Procfile`. The next two lines set the `API_KEY` and `ZIP_CODE` variables to be used in the python code. The last line bundles everything and pushes them to Heroku where `within.py` python script is ran. Use https://swinsala-weather-api.herokuapp.com to view the result.
+The first line above allows Heroku set its enverionment to be able to run Docker if it is going through `heroku.yml`. If not, ignore it so it can use `Procfile`. The next two lines set the `API_KEY` and `ZIP_CODE` variables to be used in the python code. The last line bundles everything and pushes them to Heroku where `within.py` python script is ran. Use https://swinsala-weather-api.herokuapp.com?zip_code=07018 to view the result. As said earlier, the zip code can be replaced with another zip code
