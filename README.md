@@ -25,19 +25,19 @@ To be able to use the codes, you need to create accounts on the following
 # DEPLOYING LOCALLY
 
 - Start up Docker Desktop
-- - Download at https://www.docker.com/products/docker-desktop and follow the installation instructions provided there
-- - Run `docker info` to ensure you have it installed right
+  - Download at https://www.docker.com/products/docker-desktop and follow the installation instructions provided there
+  - Run `docker info` to ensure you have it installed right
 - Run `./docker_bash.sh`
 - The script will build a Docker image, check if a Docker container is running and spin up a new container if none is runnig under that name
 - The Dockerfile has an entry point to run `within3.py` python script
 - Go to http://localhost:5000?zip_code=07018 to view the API result on your browser. Other zip codes can used to query the app too
 - To stop the container running and delete the image, run the following commands:
-- - `docker container stop weather`
-- - `docker container rm weather`
-- - `docker image rm app`
+  - `docker container stop weather`
+  - `docker container rm weather`
+  - `docker image rm app`
 - Confirm container and image are deleted using the following commands:
-- - `docker container ls -a`
-- - `docker images`
+  - `docker container ls -a`
+  - `docker images`
 
 # DEPLOYING IN HEROKU
 
