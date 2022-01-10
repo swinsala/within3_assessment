@@ -1,5 +1,7 @@
 #Dockerfile to run either on Heroku or locally on Docker Desktop 
 
+#Owner: Oluwaseun Winsala
+
 #Start from the latest python image
 FROM python:latest
 

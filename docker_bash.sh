@@ -1,5 +1,6 @@
 #!/bin/bash
 #Script to run the API on docker locally
+#Owner: Oluwaseun Winsala
 
 #declare image and container variables
 imageName=app:v1

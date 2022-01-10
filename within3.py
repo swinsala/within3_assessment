@@ -1,5 +1,5 @@
 #Python script for manipulating API result from a weather website
-
+#Owner: Oluwaseun Winsala
 #import modules
 from flask import Flask, request 
 import requests, json, os
@@ -7,17 +7,13 @@ import requests, json, os
 #create an instance of flask app 
 app = Flask(__name__)
 
-#use the zip code from the vars in Heroku or .env
-#zip_code = str(os.environ.get("ZIP_CODE"))
-
 #create a route to get the zip code of the city to check the weather
 @app.route('/', methods=['GET'])
-
-#@app.route('/string:zip_code', methods=['GET'])
 
 #Function to acess the API from the weather website
 def weather():
 
+#get the zip code from the browser
     zip_code = request.args.get('zip_code')
 #base URL of the weather website
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
