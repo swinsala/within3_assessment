@@ -8,15 +8,17 @@ import requests, json, os
 app = Flask(__name__)
 
 #use the zip code from the vars in Heroku or .env
-zip_code = str(os.environ.get("ZIP_CODE"))
+#zip_code = str(os.environ.get("ZIP_CODE"))
 
 #create a route to get the zip code of the city to check the weather
 @app.route('/', methods=['GET'])
+
 #@app.route('/string:zip_code', methods=['GET'])
 
 #Function to acess the API from the weather website
 def weather():
 
+    zip_code = request.args.get('zip_code')
 #base URL of the weather website
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
 #API key retrieved from the weather website
